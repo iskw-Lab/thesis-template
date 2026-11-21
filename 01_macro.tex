@@ -1,0 +1,25 @@
+% !TEX root = 00_main.tex
+% =================================================================
+%  マクロ定義
+% =================================================================
+
+% 図表・章・式の参照
+%   ラベルは \label{fig:xxx} \label{tab:xxx} \label{chap:xxx} \label{eq:xxx} の形で付ける．
+%   本文中では \figref{xxx} → 「図 1.1」のように出力される．
+\newcommand\figref[1]{図~\ref{fig:#1}}
+\newcommand\tabref[1]{表~\ref{tab:#1}}
+\newcommand\chapref[1]{第~\ref{chap:#1}~章}
+\newcommand\secref[1]{\ref{sec:#1}~節}
+\newcommand\equref[1]{式~(\ref{eq:#1})}
+
+\renewcommand{\bibname}{参考文献}
+
+% 行間
+\def\baselinestretch{1.15} \small\normalsize
+
+% 執筆中のメモ（赤字で表示）
+%   \todo{あとで図を追加} のように使う．
+%   提出前に下の \showtodotrue を \showtodofalse にすると全て非表示になる．
+\newif\ifshowtodo
+\showtodotrue
+\newcommand{\todo}[1]{\ifshowtodo\textcolor{red}{\textbf{[TODO: #1]}}\fi}

@@ -1,0 +1,29 @@
+{
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "latexmk (uplatex)",
+      "tools": ["latexmk-rc"]
+    }
+  ],
+  "latex-workshop.latex.tools": [
+    {
+      "name": "latexmk-rc",
+      "command": "latexmk",
+      "args": ["%DOC%"],
+      "env": {}
+    }
+  ],
+  "latex-workshop.latex.autoBuild.run": "onSave",
+  "latex-workshop.view.pdf.viewer": "tab",
+  "files.eol": "\n",
+  "files.encoding": "utf8",
+  "textlint.languages": ["latex"],
+  "textlint.run": "onType",
+  "[latex]": {
+    "editor.tabSize": 2,
+    "editor.wordWrap": "on"
+  },
+  "[bibtex]": {
+    "editor.tabSize": 2
+  }
+}

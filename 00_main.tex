@@ -1,0 +1,84 @@
+% =================================================================
+%  学位論文 LaTeX テンプレート
+%  コンパイル: latexmk（uplatex + dvipdfmx）  詳細は README.md を参照
+% =================================================================
+
+\documentclass[a4j,12pt]{ujreport}
+
+%====[ 論文情報 ]===================================================
+% ここを書き換えると，表紙と PDF のメタ情報に反映されます．
+\newcommand{\thesisyear}{令和〇年度}                % 年度
+\newcommand{\thesistype}{学位論文}                  % 論文種別（卒業論文 / 修士論文 / 博士論文）
+\newcommand{\thesistitle}{論文タイトルをここに書く\\（長い場合は改行する）}
+\newcommand{\thesistitlepdf}{論文タイトルをここに書く} % PDF用（改行なし）
+\newcommand{\thesisadvisor}{指導　教員}              % 指導教員名
+\newcommand{\thesisstudentid}{0000 - 0000}          % 学籍番号
+\newcommand{\thesisauthor}{氏　名　　太　郎}         % 著者名（表紙用）
+\newcommand{\thesisauthorpdf}{Taro Shimei}          % 著者名（PDF用）
+\newcommand{\thesisaffiliation}{〇〇大学大学院　〇〇研究科\\〇〇専攻}
+
+%====[ パッケージ ]=================================================
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage[dvipdfmx]{xcolor}
+\usepackage{url}
+\usepackage{fancyhdr}
+\usepackage{comment}
+\usepackage[nottoc]{tocbibind} % 参考文献・図目次・表目次を目次に載せる
+\usepackage[dvipdfmx]{hyperref}
+\hypersetup{
+  pdftitle  = {\thesistitlepdf},
+  pdfauthor = {\thesisauthorpdf},
+  bookmarksnumbered = true
+}
+\usepackage{pxjahyper}
+\usepackage[top=30truemm,bottom=30truemm,left=25truemm,right=25truemm,headheight=17pt]{geometry}
+\pagestyle{fancy}
+\lhead{}
+\rhead{\leftmark}
+% ヘッダを「第1章 序論」の形式にする
+\renewcommand{\chaptermark}[1]{\markboth{\ifnum\value{chapter}>0 \prechaptername\thechapter\postchaptername\quad\fi #1}{}}
+
+\input{01_macro}
+
+\begin{document}
+
+%====[ 表紙 ]========================================================
+\pagenumbering{alph} % 本文のページ番号と PDF 内部で衝突しないようにする
+\input{02_title}
+
+%====[ 概要 ]========================================================
+\pagenumbering{roman}
+\input{03_abstract}
+
+%====[ 目次 ]========================================================
+\tableofcontents
+\markboth{\contentsname}{}
+\pagebreak
+
+%====[ 本文 ]========================================================
+% 章を増減する場合はファイルを追加・削除して，ここの \input を編集する．
+\pagenumbering{arabic}
+\input{10_introduction}
+\input{20_related_work}
+\input{30_method}
+\input{40_implementation}
+\input{50_evaluation}
+\input{60_conclusion}
+
+%====[ 謝辞 ]========================================================
+\input{A0_thanks}
+
+%====[ 参考文献 ]====================================================
+\input{B0_references}
+
+%====[ 図・表一覧 ]==================================================
+\input{C0_figures}
+
+%====[ 研究業績 ]====================================================
+\input{D0_achievements}
+
+%====[ 付録 ]========================================================
+\input{E0_appendix}
+
+\end{document}

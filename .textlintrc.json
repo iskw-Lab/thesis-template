@@ -1,0 +1,40 @@
+{
+  "plugins": {
+    "latex2e": true
+  },
+  "rules": {
+    "preset-ja-technical-writing": {
+      "ja-no-mixed-period": {
+        "periodMark": "．"
+      },
+      "max-ten": {
+        "max": 3,
+        "touten": "，",
+        "kuten": "．"
+      },
+      "sentence-length": {
+        "max": 100
+      },
+      "no-mix-dearu-desumasu": {
+        "preferInHeader": "",
+        "preferInBody": "である",
+        "preferInList": "である",
+        "strict": true
+      }
+    },
+    "preset-ja-spacing": {
+      "ja-space-between-half-and-full-width": {
+        "space": "never"
+      },
+      "ja-space-around-code": false
+    },
+    "prh": {
+      "rulePaths": [
+        "./prh.yml"
+      ]
+    }
+  },
+  "filters": {
+    "comments": true
+  }
+}

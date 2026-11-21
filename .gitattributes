@@ -1,0 +1,12 @@
+# 改行コードを LF に統一する（Windows の Git が CRLF に変換して差分が汚れるのを防ぐ）
+* text=auto eol=lf
+
+# バイナリファイル
+*.pdf  binary
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.eps  binary
+*.pptx binary
+*.xlsx binary
+*.docx binary

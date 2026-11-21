@@ -1,0 +1,33 @@
+# 表記ゆれ辞書（textlint-rule-prh）
+#   expected: 正しい表記 / pattern: 誤りとして検出する表記
+#   研究室の方針に合わせて自由に追加・削除してください．
+#   `npm run lint:fix` で自動修正できます．
+version: 1
+rules:
+  # 句読点は「，」「．」に統一
+  - expected: ，
+    pattern: 、
+  - expected: ．
+    pattern: 。
+
+  # 補助動詞・形式名詞はひらがなで書く
+  - expected: できる
+    pattern: 出来る
+  - expected: ください
+    pattern: 下さい
+  - expected: ように
+    pattern: 様に
+  - expected: すべて
+    pattern: 全て
+  - expected: ほとんど
+    pattern: 殆ど
+  - expected: および
+    pattern: 及び
+  - expected: または
+    pattern: 又は
+
+  # 外来語の表記（例）
+  - expected: インタフェース
+    pattern:
+      - インターフェース
+      - インターフェイス
